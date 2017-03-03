@@ -113,3 +113,27 @@ fn path_to_local_addr(path_str: &str) -> SocketAddr {
     let port = parts.next().unwrap_or("").parse::<u16>().unwrap_or(0);
     SocketAddr::V4(SocketAddrV4::new(host, port))
 }
+
+fn parse_address(path_str: &str) -> Option<SocketAddr> {
+    let mut parts = path_str.split(':');
+
+    let host_part = parts.next();
+    if host_part.is_none() {
+        return None;
+    }
+
+    let port_part = parts.next();
+    if port_part.is_none() {
+        return None;
+    }
+
+    match Ipv4Addr::from_str(host_part.unwrap()) {
+        Ok(host) => {
+            match port_part.unwrap().parse::<u16>() {
+                Ok(port) => Some(SocketAddr::V4(SocketAddrV4::new(host, port))),
+                Err(_) => None,
+            }
+        },
+        Err(_) => None,
+    }
+}

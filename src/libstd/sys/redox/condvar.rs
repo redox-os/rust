@@ -9,7 +9,7 @@
 // except according to those terms.
 
 use cell::UnsafeCell;
-use intrinsics::{atomic_cxchg, atomic_xadd};
+use intrinsics::{atomic_cxchg, atomic_xadd, atomic_xchg};
 use ptr;
 use time::Duration;
 

@@ -12,7 +12,7 @@ use libc;
 use io;
 use sys_common::backtrace::Frame;
 
-pub use sys_common::gnu::libbacktrace::*;
+pub use sys_common::gnu::libbacktrace::{foreach_symbol_fileline, resolve_symname};
 pub struct BacktraceContext;
 
 #[inline(never)]

@@ -13,7 +13,6 @@ use env::{self, split_paths};
 use ffi::OsStr;
 use os::unix::ffi::OsStrExt;
 use fmt;
-use fs;
 use io::{self, Error, ErrorKind};
 use path::{Path, PathBuf};
 use sys::fd::FileDesc;

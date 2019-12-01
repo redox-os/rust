@@ -15,7 +15,7 @@ cfg_if! {
         use std::ffi::{CString, OsStr};
         use std::os::unix::prelude::*;
 
-        #[cfg(any(target_os = "linux", target_os = "android"))]
+        #[cfg(any(target_os = "linux", target_os = "android", target_os = "redox"))]
         mod os {
             #[repr(C)]
             pub struct flock {

@@ -12,6 +12,7 @@ pub fn opts() -> TargetOptions {
         has_thread_local: true,
         crt_static_default: true,
         crt_static_respected: true,
+        crt_static_allows_dylibs: true,
         ..Default::default()
     }
 }

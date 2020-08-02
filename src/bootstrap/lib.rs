@@ -1185,7 +1185,7 @@ impl Build {
 
     /// Returns if this target should statically link the C runtime, if specified
     fn crt_static(&self, target: TargetSelection) -> Option<bool> {
-        if target.contains("pc-windows-msvc") {
+        if target.contains("pc-windows-msvc") || target.contains("redox") {
             Some(true)
         } else {
             self.config.target_config.get(&target).and_then(|t| t.crt_static)

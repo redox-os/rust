@@ -405,7 +405,7 @@ impl Step for Rustc {
             t!(fs::create_dir_all(image.join("bin")));
             builder.cp_link_r(&src.join("bin"), &image.join("bin"));
 
-            // If enabled, copy rustdoc binary
+            /*TODO: Broken on Redox
             if builder
                 .config
                 .tools
@@ -429,6 +429,7 @@ impl Step for Rustc {
             ) {
                 builder.install(&ra_proc_macro_srv, &image.join("libexec"), 0o755);
             }
+            */
 
             let libdir_relative = builder.libdir_relative(compiler);
 

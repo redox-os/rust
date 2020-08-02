@@ -28,8 +28,8 @@
 	shallow = true
 [submodule "src/llvm-project"]
 	path = src/llvm-project
-	url = https://github.com/rust-lang/llvm-project.git
-	branch = rustc/19.1-2024-12-03
+	url = https://gitlab.redox-os.org/redox-os/llvm-project.git
+	branch = redox-2025-01-12
 	shallow = true
 [submodule "src/doc/embedded-book"]
 	path = src/doc/embedded-book

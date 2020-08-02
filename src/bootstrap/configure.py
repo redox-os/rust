@@ -102,6 +102,7 @@ o(
     "whether patch binaries for usage with Nix toolchains",
 )
 o("new-symbol-mangling", "rust.new-symbol-mangling", "use symbol-mangling-version v0")
+o("download-ci-llvm", "llvm.download-ci-llvm", "download pre-built LLVM")
 
 v("llvm-cflags", "llvm.cflags", "build LLVM with these extra compiler flags")
 v("llvm-cxxflags", "llvm.cxxflags", "build LLVM with these extra compiler flags")

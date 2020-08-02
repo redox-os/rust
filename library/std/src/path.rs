@@ -186,6 +186,10 @@ pub enum Prefix<'a> {
     /// Prefix `C:` for the given disk drive.
     #[stable(feature = "rust1", since = "1.0.0")]
     Disk(#[stable(feature = "rust1", since = "1.0.0")] u8),
+
+    /// Scheme `file:` used on Redox
+    #[stable(feature = "rust1", since = "1.0.0")]
+    Scheme(#[stable(feature = "rust1", since = "1.0.0")] &'a OsStr),
 }
 
 impl<'a> Prefix<'a> {

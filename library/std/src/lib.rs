@@ -208,6 +208,7 @@
 #![warn(missing_debug_implementations)]
 #![allow(explicit_outlives_requirements)]
 #![allow(unused_lifetimes)]
+#![allow(unused_unsafe)] // For redox libc issues
 // Tell the compiler to link to either panic_abort or panic_unwind
 #![needs_panic_runtime]
 // std may use features in a platform-specific way

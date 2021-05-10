@@ -1800,7 +1800,7 @@ checksum = "dc6f3ad7b9d11a0c00842ff8de1b60ee58661048eb8049ed33c73594f359d7e6"
 [[package]]
 name = "jobserver"
 version = "0.1.22"
-source = "git+https://gitlab.redox-os.org/redox-os/jobserver-rs?branch=redox-0.1.22#6bb2c30220766f04d43eddf3f5f715a9e0fd201b"
+source = "git+https://gitlab.redox-os.org/redox-os/jobserver-rs?branch=redox-0.1.22#73af25193f6858225278aeced26b6765185e4a50"
 dependencies = [
  "libc",
 ]

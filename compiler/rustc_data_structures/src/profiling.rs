@@ -637,7 +637,7 @@ cfg_if! {
                 }
             }
         }
-    } else if #[cfg(unix)] {
+    } else if #[cfg(all(unix, not(target_os = "redox")))] {
         pub fn get_resident_set_size() -> Option<usize> {
             let field = 1;
             let contents = fs::read("/proc/self/statm").ok()?;

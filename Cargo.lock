@@ -1431,9 +1431,8 @@ dependencies = [
 
 [[package]]
 name = "jobserver"
-version = "0.1.21"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5c71313ebb9439f74b00d9d2dcec36440beaf57a6aa0623068441dd7cd81a7f2"
+version = "0.1.22"
+source = "git+https://gitlab.redox-os.org/redox-os/jobserver-rs?branch=redox-0.1.22#6bb2c30220766f04d43eddf3f5f715a9e0fd201b"
 dependencies = [
  "libc",
 ]
@@ -1563,9 +1562,9 @@ checksum = "b294d6fa9ee409a054354afc4352b0b9ef7ca222c69b8812cbea9e7d2bf3783f"
 
 [[package]]
 name = "libc"
-version = "0.2.73"
+version = "0.2.94"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bd7d4bd64732af4bf3a67f367c27df8520ad7e230c5817b8ff485864d80242b9"
+checksum = "18794a8ad5b29321f790b55d93dfba91e125cb1a9edbd4f8e3150acc771c1a5e"
 dependencies = [
  "rustc-std-workspace-core",
 ]

@@ -63,7 +63,7 @@ cfg_if! {
         // Note that we don't need a Drop impl to execute `flock(fd, LOCK_UN)`. Lock acquired by
         // `flock` is associated with the file descriptor and closing the file release it
         // automatically.
-    } else if #[cfg(unix)] {
+    } else if #[cfg(all(unix, not(target_os = "redox")))] {
         use std::mem;
         use std::os::unix::prelude::*;
 

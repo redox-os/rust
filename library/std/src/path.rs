@@ -208,6 +208,7 @@ impl<'a> Prefix<'a> {
             UNC(x, y) => 2 + os_str_len(x) + if os_str_len(y) > 0 { 1 + os_str_len(y) } else { 0 },
             DeviceNS(x) => 4 + os_str_len(x),
             Disk(_) => 2,
+            Scheme(x) => os_str_len(x) + 1,
         }
     }
 

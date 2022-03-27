@@ -34,7 +34,7 @@
 [submodule "src/llvm-project"]
 	path = src/llvm-project
 	url = https://gitlab.redox-os.org/redox-os/llvm-project.git
-	branch = redox-2020-07-27
+	branch = redox-2022-03-18
 [submodule "src/doc/embedded-book"]
 	path = src/doc/embedded-book
 	url = https://github.com/rust-embedded/book.git

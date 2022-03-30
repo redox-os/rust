@@ -17,7 +17,7 @@ cfg_if! {
     //
     // For other Unix targets we still use `fcntl` because it's more portable than
     // `flock`.
-    if #[cfg(target_os = "linux")] {
+    if #[cfg(any(target_os = "linux", target_os = "redox"))] {
         use std::os::unix::prelude::*;
 
         #[derive(Debug)]
@@ -55,6 +55,12 @@ cfg_if! {
                 }
             }
 
+            #[cfg(target_os = "redox")]
+            pub fn error_unsupported(err: &io::Error) -> bool {
+                matches!(err.raw_os_error(), Some(libc::ENOSYS))
+            }
+
+            #[cfg(not(target_os = "redox"))]
             pub fn error_unsupported(err: &io::Error) -> bool {
                 matches!(err.raw_os_error(), Some(libc::ENOTSUP) | Some(libc::ENOSYS))
             }

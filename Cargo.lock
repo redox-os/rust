@@ -1965,9 +1965,8 @@ checksum = "830d08ce1d1d941e6b30645f1a0eb5643013d835ce3779a5fc208261dbe10f55"
 
 [[package]]
 name = "libc"
-version = "0.2.121"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "efaa7b300f3b5fe8eb6bf21ce3895e1751d9665086af2d64b42f19701015ff4f"
+version = "0.2.137"
+source = "git+https://gitlab.redox-os.org/redox-os/liblibc.git?branch=redox-0.2.137#db3423be55b86c511d1fe6e6e371549f9802a8b6"
 dependencies = [
  "rustc-std-workspace-core",
 ]

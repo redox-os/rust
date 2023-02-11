@@ -60,6 +60,7 @@ o("use-libcxx", "llvm.use-libcxx", "build LLVM with libc++")
 o("control-flow-guard", "rust.control-flow-guard", "Enable Control Flow Guard")
 o("patch-binaries-for-nix", "build.patch-binaries-for-nix", "whether patch binaries for usage with Nix toolchains")
 o("new-symbol-mangling", "rust.new-symbol-mangling", "use symbol-mangling-version v0")
+o("download-ci-llvm", "llvm.download-ci-llvm", "download pre-built LLVM")
 
 v("llvm-cflags", "llvm.cflags", "build LLVM with these extra compiler flags")
 v("llvm-cxxflags", "llvm.cxxflags", "build LLVM with these extra compiler flags")

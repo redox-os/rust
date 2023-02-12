@@ -206,6 +206,7 @@ pub fn get_or_default_sysroot() -> Result<PathBuf, String> {
                 // is a symlink (see #79253). We might want to change/remove it to conform with
                 // https://www.gnu.org/prep/standards/standards.html#Finding-Program-Files in the
                 // future.
+                #[cfg(not(target_os = "redox"))]
                 if fs::read_link(&p).is_err() {
                     // Path is not a symbolic link or does not exist.
                     return None;

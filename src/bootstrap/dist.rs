@@ -392,6 +392,7 @@ impl Step for Rustc {
             t!(fs::create_dir_all(image.join("bin")));
             builder.cp_r(&src.join("bin"), &image.join("bin"));
 
+            /*TODO: Broken on Redox
             builder.install(&builder.rustdoc(compiler), &image.join("bin"), 0o755);
 
             let ra_proc_macro_srv = builder
@@ -405,6 +406,7 @@ impl Step for Rustc {
                 })
                 .expect("rust-analyzer-proc-macro-server always builds");
             builder.install(&ra_proc_macro_srv, &image.join("libexec"), 0o755);
+            */
 
             let libdir_relative = builder.libdir_relative(compiler);
 

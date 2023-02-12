@@ -223,5 +223,5 @@ pub fn get_or_default_sysroot() -> Result<PathBuf, String> {
         }
     }
 
-    Ok(from_env_args_next().unwrap_or(default_from_rustc_driver_dll().unwrap_or(PathBuf::from("/")))
+    Ok(from_env_args_next().unwrap_or(default_from_rustc_driver_dll().unwrap_or(PathBuf::from("/"))))
 }

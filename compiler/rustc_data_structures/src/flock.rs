@@ -11,6 +11,9 @@ cfg_if! {
     if #[cfg(target_os = "linux")] {
         mod linux;
         use linux as imp;
+    } else if #[cfg(target_os = "redox")] {
+        mod linux;
+        use linux as imp;
     } else if #[cfg(unix)] {
         mod unix;
         use unix as imp;

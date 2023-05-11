@@ -110,6 +110,8 @@ object.debug = 0
 rustc-std-workspace-core = { path = 'library/rustc-std-workspace-core' }
 rustc-std-workspace-alloc = { path = 'library/rustc-std-workspace-alloc' }
 rustc-std-workspace-std = { path = 'library/rustc-std-workspace-std' }
+# Redox patch for new pthreads
+libc = { git = "https://gitlab.redox-os.org/redox-os/liblibc.git", branch = "redox_0.2.146" }
 
 [patch."https://github.com/rust-lang/rust-clippy"]
 clippy_lints = { path = "src/tools/clippy/clippy_lints" }

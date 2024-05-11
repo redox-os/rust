@@ -18,7 +18,7 @@ pub fn target() -> Target {
             std: None,
         },
         pointer_width: 32,
-        data_layout: "e-m:e-p:32:32-p270:32:32-p271:32:32-p272:64:64-f64:32:64-f80:32-n8:16:32-S128"
+        data_layout: "e-m:e-p:32:32-p270:32:32-p271:32:32-p272:64:64-i128:128-f64:32:64-f80:32-n8:16:32-S128"
             .into(),
         arch: "x86".into(),
         options: base,

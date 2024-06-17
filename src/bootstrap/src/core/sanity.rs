@@ -36,6 +36,7 @@ const STAGE0_MISSING_TARGETS: &[&str] = &[
     "aarch64-apple-visionos",
     "aarch64-apple-visionos-sim",
     "i686-unknown-redox",
+    "riscv64gc-unknown-redox",
 ];
 
 impl Finder {

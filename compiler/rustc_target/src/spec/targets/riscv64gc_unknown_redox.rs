@@ -1,6 +1,6 @@
 use crate::spec::{base, CodeModel, Target};
 
-pub fn target() -> Target {
+pub(crate) fn target() -> Target {
     let mut base = base::redox::opts();
     base.code_model = Some(CodeModel::Medium);
     base.cpu = "generic-rv64".into();

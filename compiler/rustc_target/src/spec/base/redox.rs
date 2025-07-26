@@ -9,10 +9,10 @@ pub(crate) fn opts() -> TargetOptions {
         has_rpath: true,
         position_independent_executables: true,
         relro_level: RelroLevel::Full,
-        has_thread_local: true,
+        has_thread_local: false,
         crt_static_default: true,
         crt_static_respected: true,
-        crt_static_allows_dylibs: true,
+        crt_static_allows_dylibs: false,
         late_link_args: TargetOptions::link_args(LinkerFlavor::Gnu(Cc::Yes, Lld::No), &["-lgcc"]),
         ..Default::default()
     }

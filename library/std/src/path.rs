@@ -183,10 +183,6 @@ pub enum Prefix<'a> {
     /// Prefix `C:` for the given disk drive.
     #[stable(feature = "rust1", since = "1.0.0")]
     Disk(#[stable(feature = "rust1", since = "1.0.0")] u8),
-
-    /// Scheme `file:` used on Redox
-    #[stable(feature = "rust1", since = "1.0.0")]
-    Scheme(#[stable(feature = "rust1", since = "1.0.0")] &'a OsStr),
 }
 
 impl<'a> Prefix<'a> {
@@ -205,7 +201,6 @@ impl<'a> Prefix<'a> {
             UNC(x, y) => 2 + os_str_len(x) + if os_str_len(y) > 0 { 1 + os_str_len(y) } else { 0 },
             DeviceNS(x) => 4 + os_str_len(x),
             Disk(_) => 2,
-            Scheme(x) => os_str_len(x) + 1,
         }
     }
 
@@ -300,11 +295,6 @@ where
         }
         iter = iter_next;
     }
-}
-
-// Detect scheme on Redox
-fn has_redox_scheme(s: &[u8]) -> bool {
-    cfg!(target_os = "redox") && s.contains(&b':')
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -2328,14 +2318,9 @@ impl Path {
     #[must_use]
     #[allow(deprecated)]
     pub fn is_absolute(&self) -> bool {
-        if cfg!(target_os = "redox") {
-            // FIXME: Allow Redox prefixes
-            self.has_root() || has_redox_scheme(self.as_u8_slice())
-        } else {
-            self.has_root()
-                && (cfg!(any(unix, target_os = "hermit", target_os = "wasi"))
-                    || self.prefix().is_some())
-        }
+        self.has_root()
+            && (cfg!(any(unix, target_os = "hermit", target_os = "wasi"))
+                || self.prefix().is_some())
     }
 
     /// Returns `true` if the `Path` is relative, i.e., not absolute.

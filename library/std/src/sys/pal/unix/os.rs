@@ -20,15 +20,8 @@ use crate::sys::weak::weak;
 use crate::sys::{cvt, fd};
 use crate::{fmt, io, iter, mem, ptr, slice, str, vec};
 
+const PATH_SEPARATOR: u8 = b':';
 const TMPBUF_SZ: usize = 128;
-
-cfg_if::cfg_if! {
-    if #[cfg(target_os = "redox")] {
-        const PATH_SEPARATOR: u8 = b';';
-    } else {
-        const PATH_SEPARATOR: u8 = b':';
-    }
-}
 
 extern "C" {
     #[cfg(not(any(target_os = "dragonfly", target_os = "vxworks", target_os = "rtems")))]

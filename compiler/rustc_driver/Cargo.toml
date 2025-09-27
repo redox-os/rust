@@ -3,9 +3,8 @@ name = "rustc_driver"
 version = "0.0.0"
 edition = "2021"
 
-# Support static linking https://users.rust-lang.org/t/83024/2
-# [lib]
-# crate-type = ["dylib"]
+[lib]
+crate-type = ["dylib"]
 
 [dependencies]
 # tidy-alphabetical-start

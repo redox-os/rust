@@ -1553,7 +1553,9 @@ supported_targets! {
 
     ("aarch64-unknown-redox", aarch64_unknown_redox),
     ("i586-unknown-redox", i586_unknown_redox),
+    ("i686-unknown-redox", i686_unknown_redox),
     ("x86_64-unknown-redox", x86_64_unknown_redox),
+    ("riscv64gc-unknown-redox", riscv64gc_unknown_redox),
 
     ("x86_64-unknown-managarm-mlibc", x86_64_unknown_managarm_mlibc),
     ("aarch64-unknown-managarm-mlibc", aarch64_unknown_managarm_mlibc),

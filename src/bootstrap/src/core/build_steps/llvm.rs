@@ -683,6 +683,8 @@ fn configure_cmake(
             cfg.define("CMAKE_SYSTEM_NAME", "visionOS");
         } else if target.contains("watchos") {
             cfg.define("CMAKE_SYSTEM_NAME", "watchOS");
+        } else if target.contains("redox") {
+            cfg.define("CMAKE_SYSTEM_NAME", "UnixPaths");
         } else if target.contains("none") {
             // "none" should be the last branch
             cfg.define("CMAKE_SYSTEM_NAME", "Generic");

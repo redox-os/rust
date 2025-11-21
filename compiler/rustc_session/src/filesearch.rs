@@ -249,5 +249,5 @@ pub(crate) fn default_sysroot() -> PathBuf {
     }
 
     from_env_args_next()
-        .unwrap_or_else(|| default_from_rustc_driver_dll().expect("Failed finding sysroot"))
+        .unwrap_or_else(|| default_from_rustc_driver_dll().unwrap_or(PathBuf::from("/")))
 }

@@ -4,7 +4,8 @@
 	shallow = true
 [submodule "src/tools/cargo"]
 	path = src/tools/cargo
-	url = https://github.com/rust-lang/cargo.git
+	url = https://gitlab.redox-os.org/redox-os/cargo.git
+	branch = redox-2025-10-03
 	shallow = true
 [submodule "src/doc/reference"]
 	path = src/doc/reference

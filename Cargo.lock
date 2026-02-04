@@ -1405,9 +1405,8 @@ checksum = "77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb"
 
 [[package]]
 name = "form_urlencoded"
-version = "1.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e13624c2627564efccf4934284bdd98cbaa14e79b0b5a141218e507b3a823456"
+version = "1.2.2"
+source = "git+https://github.com/Andy-Python-Programmer/rust-url/#640e308c16309a12faffce45e01959b9315901ca"
 dependencies = [
  "percent-encoding",
 ]
@@ -1823,9 +1822,8 @@ checksum = "b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39"
 
 [[package]]
 name = "idna"
-version = "1.0.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "686f825264d630750a544639377bae737628043f20d38bbc029e8f29ea968a7e"
+version = "1.1.0"
+source = "git+https://github.com/Andy-Python-Programmer/rust-url/#640e308c16309a12faffce45e01959b9315901ca"
 dependencies = [
  "idna_adapter",
  "smallvec",
@@ -2760,9 +2758,8 @@ checksum = "df94ce210e5bc13cb6651479fa48d14f601d9858cfe0467f43ae157023b938d3"
 
 [[package]]
 name = "percent-encoding"
-version = "2.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e3148f5046208a5d56bcfc03053e3ca6334e51da8dfb19b6cdc8b306fae3283e"
+version = "2.3.2"
+source = "git+https://github.com/Andy-Python-Programmer/rust-url/#640e308c16309a12faffce45e01959b9315901ca"
 
 [[package]]
 name = "perf-event-open-sys"
@@ -5904,13 +5901,13 @@ dependencies = [
 
 [[package]]
 name = "url"
-version = "2.5.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32f8b686cadd1473f4bd0117a5d28d36b1ade384ea9b5069a1c40aefed7fda60"
+version = "2.5.8"
+source = "git+https://github.com/Andy-Python-Programmer/rust-url/#640e308c16309a12faffce45e01959b9315901ca"
 dependencies = [
  "form_urlencoded",
  "idna",
  "percent-encoding",
+ "serde",
 ]
 
 [[package]]

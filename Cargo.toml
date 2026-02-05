@@ -91,5 +91,9 @@ codegen-units = 1
 
 # If you want to use a crate with local modifications, you can set a path or git dependency here.
 # For git dependencies, also add your source to ALLOWED_SOURCES in src/tools/tidy/src/extdeps.rs.
-#[patch.crates-io]
+[patch.crates-io]
+# FIXME(andypython): remove when https://github.com/servo/rust-url/pull/1095 has been merged
+url = { git = "https://github.com/Andy-Python-Programmer/rust-url/" }
+form_urlencoded = { git = "https://github.com/Andy-Python-Programmer/rust-url/" }
+percent-encoding = { git = "https://github.com/Andy-Python-Programmer/rust-url/" }
 

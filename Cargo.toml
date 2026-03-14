@@ -96,4 +96,5 @@ codegen-units = 1
 url = { git = "https://github.com/Andy-Python-Programmer/rust-url/" }
 form_urlencoded = { git = "https://github.com/Andy-Python-Programmer/rust-url/" }
 percent-encoding = { git = "https://github.com/Andy-Python-Programmer/rust-url/" }
+libz-sys = { git = "https://github.com/willnode/libz-sys", branch = "servo" }
 

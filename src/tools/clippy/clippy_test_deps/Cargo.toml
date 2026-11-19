@@ -18,3 +18,7 @@ itertools = "0.12"
 
 # Make sure we are not part of the rustc workspace.
 [workspace]
+
+[patch.crates-io]
+libc = { git = "https://gitlab.redox-os.org/redox-os/liblibc", branch = "redox-0.2.186" }
+backtrace = { git = "https://gitlab.redox-os.org/redox-os/backtrace-rs", branch = "redox-0.3.76" }

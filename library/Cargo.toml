@@ -88,3 +88,4 @@ rustc-std-workspace-std = { path = 'rustc-std-workspace-std' }
 
 # See comments in `library/windows-sys/Cargo.toml` for why this is patched
 windows-sys = { path = 'windows-sys' }
+libc = { git = "https://gitlab.redox-os.org/redox-os/liblibc", branch = "redox-0.2.186" }

@@ -870,8 +870,7 @@ checksum = "db13adb97ab515a3691f56e4dbab09283d0b86cb45abd991d8634a9d6f501760"
 [[package]]
 name = "libc"
 version = "0.2.186"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "68ab91017fe16c622486840e4c83c9a37afeff978bd239b5293d61ece587de66"
+source = "git+https://github.com/willnode/libc?branch=linux-0.2.186#cce5bc09c7a5f5287d9d36865c000316ffb4686e"
 
 [[package]]
 name = "libffi"

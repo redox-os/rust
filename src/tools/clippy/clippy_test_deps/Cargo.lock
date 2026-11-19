@@ -35,8 +35,7 @@ checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
 [[package]]
 name = "backtrace"
 version = "0.3.76"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bb531853791a215d7c62a30daf0dde835f381ab5de4589cfe7c649d2cbe92bd6"
+source = "git+https://gitlab.redox-os.org/redox-os/backtrace-rs?branch=redox-0.3.76#927a8ed633e8d5e63ec760ddd6cc2ea08d11eeca"
 dependencies = [
  "addr2line",
  "cfg-if",
@@ -204,8 +203,7 @@ dependencies = [
 [[package]]
 name = "libc"
 version = "0.2.186"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "68ab91017fe16c622486840e4c83c9a37afeff978bd239b5293d61ece587de66"
+source = "git+https://gitlab.redox-os.org/redox-os/liblibc?branch=redox-0.2.186#0a561a02548000dddc1d9da5d0979046e60e402d"
 
 [[package]]
 name = "lock_api"
@@ -345,9 +343,9 @@ checksum = "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
 
 [[package]]
 name = "rustc-demangle"
-version = "0.1.25"
+version = "0.1.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "989e6739f80c4ad5b13e0fd7fe89531180375b18520cc8c82080e4dc4035b84f"
+checksum = "b74b56ffa8bb2830709a538c2cbcae9aa062db0d2a42563bfb09bdaae44020eb"
 
 [[package]]
 name = "scopeguard"

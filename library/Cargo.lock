@@ -146,9 +146,8 @@ dependencies = [
 
 [[package]]
 name = "libc"
-version = "0.2.185"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "52ff2c0fe9bc6cb6b14a0592c2ff4fa9ceb83eea9db979b0487cd054946a2b8f"
+version = "0.2.186"
+source = "git+https://gitlab.redox-os.org/redox-os/liblibc?branch=redox-0.2.186#0a561a02548000dddc1d9da5d0979046e60e402d"
 dependencies = [
  "rustc-std-workspace-core",
 ]

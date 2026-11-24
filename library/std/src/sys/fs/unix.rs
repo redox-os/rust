@@ -277,7 +277,6 @@ struct DirStream(*mut libc::DIR);
 // dir::Dir requires openat support
 cfg_select! {
     any(
-        target_os = "redox",
         target_os = "espidf",
         target_os = "horizon",
         target_os = "vita",
@@ -1013,7 +1012,6 @@ impl Drop for DirStream {
         // dirfd isn't supported everywhere
         #[cfg(not(any(
             miri,
-            target_os = "redox",
             target_os = "nto",
             target_os = "vita",
             target_os = "hurd",
@@ -1791,10 +1789,8 @@ impl File {
 
     pub fn set_times(&self, times: FileTimes) -> io::Result<()> {
         cfg_select! {
-            any(target_os = "redox", target_os = "espidf", target_os = "horizon", target_os = "nuttx") => {
-                // Redox doesn't appear to support `UTIME_OMIT`.
-                // ESP-IDF and HorizonOS do not support `futimens` at all and the behavior for those OS is therefore
-                // the same as for Redox.
+            any(target_os = "espidf", target_os = "horizon", target_os = "nuttx") => {
+                // ESP-IDF and HorizonOS do not support `futimens` at all
                 let _ = times;
                 Err(io::const_error!(
                     io::ErrorKind::Unsupported,
@@ -1856,7 +1852,6 @@ impl File {
 }
 
 #[cfg(not(any(
-    target_os = "redox",
     target_os = "espidf",
     target_os = "horizon",
     target_os = "nuttx",
@@ -2137,12 +2132,11 @@ pub fn symlink(original: &CStr, link: &CStr) -> io::Result<()> {
 pub fn link(original: &CStr, link: &CStr) -> io::Result<()> {
     cfg_select! {
         any(
-            // VxWorks, Redox and ESP-IDF lack `linkat`, so use `link` instead.
+            // VxWorks and ESP-IDF lack `linkat`, so use `link` instead.
             // POSIX leaves it implementation-defined whether `link` follows
             // symlinks, so rely on the `symlink_hard_link` test in
             // library/std/src/fs/tests.rs to check the behavior.
             target_os = "vxworks",
-            target_os = "redox",
             target_os = "espidf",
             // Android has `linkat` on newer versions, but we happen to know
             // `link` always has the correct behavior, so it's here as well.
@@ -2223,7 +2217,7 @@ fn open_from(from: &Path) -> io::Result<(crate::fs::File, crate::fs::Metadata)> 
 
 fn set_times_impl(p: &CStr, times: FileTimes, follow_symlinks: bool) -> io::Result<()> {
     cfg_select! {
-       any(target_os = "redox", target_os = "espidf", target_os = "horizon", target_os = "nuttx", target_os = "vita", target_os = "rtems") => {
+       any(target_os = "espidf", target_os = "horizon", target_os = "nuttx", target_os = "vita", target_os = "rtems") => {
             let _ = (p, times, follow_symlinks);
             Err(io::const_error!(
                 io::ErrorKind::Unsupported,
@@ -2511,7 +2505,6 @@ pub use remove_dir_impl::remove_dir_all;
 
 // Fallback for REDOX, ESP-ID, Horizon, Vita, Vxworks and Miri
 #[cfg(any(
-    target_os = "redox",
     target_os = "espidf",
     target_os = "horizon",
     target_os = "vita",
@@ -2525,7 +2518,6 @@ mod remove_dir_impl {
 
 // Modern implementation using openat(), unlinkat() and fdopendir()
 #[cfg(not(any(
-    target_os = "redox",
     target_os = "espidf",
     target_os = "horizon",
     target_os = "vita",

@@ -749,7 +749,7 @@ impl Command {
             if self.get_setsid() {
                 cfg_select! {
                     all(target_os = "linux", target_env = "gnu") => {
-                        flags |= libc::POSIX_SPAWN_SETSID;
+                        flags |= libc::POSIX_SPAWN_SETSID as i32;
                     }
                     _ => {
                         return Ok(None);

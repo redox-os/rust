@@ -1986,12 +1986,7 @@ fn test_file_times() {
             windows,
             all(
                 unix,
-                not(any(
-                    target_os = "android",
-                    target_os = "redox",
-                    target_os = "espidf",
-                    target_os = "horizon"
-                ))
+                not(any(target_os = "android", target_os = "espidf", target_os = "horizon"))
             )
         )))]
         Err(e) if e.kind() == ErrorKind::Unsupported => return,
@@ -2253,12 +2248,7 @@ fn test_fs_set_times() {
             windows,
             all(
                 unix,
-                not(any(
-                    target_os = "android",
-                    target_os = "redox",
-                    target_os = "espidf",
-                    target_os = "horizon"
-                ))
+                not(any(target_os = "android", target_os = "espidf", target_os = "horizon"))
             )
         )))]
         Err(e) if e.kind() == ErrorKind::Unsupported => return,
@@ -2304,12 +2294,7 @@ fn test_fs_set_times_on_dir() {
             windows,
             all(
                 unix,
-                not(any(
-                    target_os = "android",
-                    target_os = "redox",
-                    target_os = "espidf",
-                    target_os = "horizon"
-                ))
+                not(any(target_os = "android", target_os = "espidf", target_os = "horizon"))
             )
         )))]
         Err(e) if e.kind() == ErrorKind::Unsupported => return,
@@ -2374,12 +2359,7 @@ fn test_fs_set_times_follows_symlink() {
             windows,
             all(
                 unix,
-                not(any(
-                    target_os = "android",
-                    target_os = "redox",
-                    target_os = "espidf",
-                    target_os = "horizon"
-                ))
+                not(any(target_os = "android", target_os = "espidf", target_os = "horizon"))
             )
         )))]
         Err(e) if e.kind() == ErrorKind::Unsupported => return,
@@ -2466,12 +2446,7 @@ fn test_fs_set_times_nofollow() {
             windows,
             all(
                 unix,
-                not(any(
-                    target_os = "android",
-                    target_os = "redox",
-                    target_os = "espidf",
-                    target_os = "horizon"
-                ))
+                not(any(target_os = "android", target_os = "espidf", target_os = "horizon"))
             )
         )))]
         Err(e) if e.kind() == ErrorKind::Unsupported => return,
